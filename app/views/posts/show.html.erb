@@ -1,0 +1,6 @@
+<h1><%= @post.title %></h1>
+<p><%= link_to @post.destination.name, destination_path(@post.destination) %></p>
+<h3><%= @post.content %></h3>
+<p>by <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p><%= @post.likes %> likes </p>
+<%= button_to "Like", "/posts/#{@post.id}/like", method: :put %>

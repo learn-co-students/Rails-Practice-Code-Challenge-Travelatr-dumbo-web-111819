@@ -1,0 +1,10 @@
+<h1><%= @destination.name %></h1>
+<h3><%= @destination.country %></h3>
+<br>
+<ul>
+<% @destination.posts.reverse.each do |p| %>
+  <li><%= link_to p.title, post_path(p) %></li>
+<% end %>
+</ul>
+<h3>Featured Post: <%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %></h3>
+<h3>Average Age of Bloggers: <%= @destination.bloggers_average_age %></h3>
